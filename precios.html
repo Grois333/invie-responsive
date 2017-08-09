@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Precios de tus mejores guitarras!!</title>
+    <link rel="stylesheet" href="css/invie.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+  </head>
+  <body class="precios">
+    <div class="background" >
+    <header id="header" class="header contenedor"> <!-- Header -->
+
+      <figure class="logotipo"> <!-- logotipo -->
+        <img src="images/invie.png" width="186" height="60" alt="Invie logotipo"/>
+      </figure>
+
+      <span class="burger-button icon-menu" id="burger-button"></span>
+
+      <nav class="menu" id="menu"><!-- menu -->
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="index.html#guitarras">Guitarras</a>
+          </li>
+          <li>
+            <a href="precios.html">Precios</a>
+          </li>
+        </ul>
+      </nav>
+
+    </header>
+  </div>
+    <section class="tabla">
+      <div class="contenedor">
+      <table>
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Precio</th>
+            <th>Descripción</th>
+            <th>Modelo</th>
+            <th>Precio</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Invie Acústica</td>
+            <td>$100.000</td>
+            <td>Una guitarra muy pro, estilo vintage de madera pura, con estuche de aluminio.</td>
+            <td>Invie Acústica</td>
+            <td>$100.000</td>
+            <td>Una guitarra muy pro, estilo vintage de madera pura, con estuche de aluminio.</td>
+          </tr>
+          <tr>
+            <td>Invie Classic</td>
+            <td>$200.000</td>
+            <td>Una guitarra muy pro, estilo vintage liviana, perfecta para empezar a ser rockstar.</td>
+            <td>Invie Classic</td>
+            <td>$200.000</td>
+            <td>Una guitarra muy pro, estilo vintage liviana, perfecta para empezar a ser rockstar.</td>
+          </tr>
+          <tr>
+            <td>Invie Electroacústica</td>
+            <td>$300.000</td>
+            <td>Una guitarra muy pro, guitarra experimental, añade diversidad en los recitales.</td>
+            <td>Invie Electroacústica</td>
+            <td>$300.000</td>
+            <td>Una guitarra muy pro, guitarra experimental, añade diversidad en los recitales.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </section>
+
+    <footer class="footer">
+      <div class="contenedor">
+      <div class="contacto">
+        <img src="images/invie-white.png" alt="logotipo blanco">
+        <a href="tel: +583024456678"><strong>Telefono</strong><span>3024456678<span></a>
+        <a href="mailto:contacto@invie.com"><strong>E-mail</strong><span>contacto@invie.com</span></a>
+      </div>
+      <form class="formulario">
+        <div class="col1">
+        <label for="Nombre">Nombre</label>
+        <input type="text" required id="Nombre" name="nombre"/>
+        <label class="email" for="email">E-mail</label>
+        <input type="email" required id="email" name="email"/>
+      <div class="sexo">
+        <label for="mujer">
+        <input type="radio" checked id="mujer" name="sexo" value="mujer"/> mujer
+        </label>
+        <label for="hombre">
+        <input type="radio" id="hombre" name="sexo" value="hombre"/> hombre
+        </label>
+      </div>
+      <div class="intereses">
+        <label for="cotizacion">
+          <input type="checkbox" checked id="cotizacion" name="intereses" value="cotizacion"/> Cotización
+        </label>
+        <label for="reclamos">
+          <input type="checkbox" id="reclamos" name="intereses" value="reclamos"/> Reclamos
+        </label>
+        <label for="comentarios">
+          <input type="checkbox" id="comentarios" name="intereses" value="comentarios"/> Comentarios
+        </label>
+        <label for="otros">
+          <input type="checkbox" id="otros" name="intereses" value="Otros"/> Otros
+        </label>
+      </div>
+      </div>
+      <div class="col2">
+        <label for="comentarios">Comentarios</label>
+        <textarea name="comentarios" id="comentarios" rows="7" cols="30"></textarea>
+        <input class="button enviar" type="submit" name="" value="Enviar">
+      </div>
+      </form>
+    </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+    <script type="text/javascript">
+     var consulta = window.matchMedia("(max-width: 500px)");
+     consulta.addListener(mediaQuery);
+
+     var $burgerButton = document.getElementById("burger-button");
+     var $menu = document.getElementById("menu");
+
+     function toggleMenu(){
+       $menu.classList.toggle("active")
+
+       $burgerButton.classList.toggle('icon-close');
+
+     };
+
+    function mediaQuery(){
+
+      if(consulta.matches){
+        // si se cumple hagamos esto
+        $burgerButton.style = "visibility: visibile";/*a qui*/
+        console.log("Se cumplió la condición");
+        $burgerButton.addEventListener("touchstart", toggleMenu);    //touchstart
+
+      } else{
+        // si no se cumple hagamos esto
+        console.log("No se cumplió la condición");
+         $burgerButton.style = "visibility: hidden";/* y a qui*/
+        $burgerButton.removeEventListener("touchstart", toggleMenu);
+      }
+
+    }
+
+    mediaQuery();
+
+    //Lazy Loading for images
+    var bLazy = new Blazy({
+    // options
+    selector: "img"
+    });
+
+
+
+      //  $burgerButton.addEventListener("touchstart", toggleMenu);    //touchstart
+       //
+      //  function toggleMenu(){
+      //    $menu.classList.toggle("active")
+      //  };
+
+
+    </script>
+  </body>
+</html>
